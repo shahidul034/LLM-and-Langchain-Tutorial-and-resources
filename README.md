@@ -158,6 +158,13 @@ llm_chain = LLMChain(
 )
 llm_chain.predict(user_input="Can you tell me about yourself.")
 ```
+## Train any LLM model using usint peft
+```
+
+
+```
+
+
 
 
 
