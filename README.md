@@ -124,6 +124,10 @@ docs=text_splitter.split_documents(documents=documents)
 ```
 ## Train any LLM model using autotrain
 https://github.com/huggingface/autotrain-advanced
+
+The EASIEST way to finetune LLAMA-v2 on local machine!
+
+https://www.youtube.com/watch?v=3fsn19OI_C8
 ### Install autotrain 
 ```
 pip install autotrain-advanced
@@ -158,14 +162,77 @@ llm_chain = LLMChain(
 )
 llm_chain.predict(user_input="Can you tell me about yourself.")
 ```
-## Train any LLM model using usint peft
+## Falcon model load ,creating chatbot and stopping criteria so that it can't show irrelevent output.
 ```
-
+def llm_return():
+    path=r'/home/drmohammad/data/llm/falcon-7b-instruct'
+    tokenizer = AutoTokenizer.from_pretrained(path,
+                                            use_auth_token=True,)
+    model = AutoModelForCausalLM.from_pretrained(
+        path, trust_remote_code=True, load_in_8bit=True, device_map="auto"
+    )
+    generation_config = model.generation_config
+    generation_config.temperature = 0
+    generation_config.num_return_sequences = 1
+    generation_config.max_new_tokens = 256
+    generation_config.use_cache = False
+    generation_config.repetition_penalty = 1.7
+    generation_config.pad_token_id = tokenizer.eos_token_id
+    generation_config.eos_token_id = tokenizer.eos_token_id
+    
+    class StopGenerationCriteria(StoppingCriteria):
+        def __init__(
+            self, tokens: List[List[str]], tokenizer: AutoTokenizer, device: torch.device
+        ):
+            stop_token_ids = [tokenizer.convert_tokens_to_ids(t) for t in tokens]
+            self.stop_token_ids = [
+                torch.tensor(x, dtype=torch.long, device=device) for x in stop_token_ids
+            ]
+    
+        def __call__(
+            self, input_ids: torch.LongTensor, scores: torch.FloatTensor, **kwargs
+        ) -> bool:
+            for stop_ids in self.stop_token_ids:
+                if torch.eq(input_ids[0][-len(stop_ids) :], stop_ids).all():
+                    return True
+            return False
+    stop_tokens = [["Human", ":"], ["AI", ":"]]
+    stopping_criteria = StoppingCriteriaList([StopGenerationCriteria(stop_tokens, tokenizer, model.device)])
+    generation_pipeline = pipeline(
+    model=model,
+    tokenizer=tokenizer,
+    return_full_text=True,
+    task="text-generation",
+    stopping_criteria=stopping_criteria,
+    generation_config=generation_config,
+    )
+ 
+    llm = HuggingFacePipeline(pipeline=generation_pipeline)
+        
+    return llm
 
 ```
+Resources: https://www.mlexpert.io/prompt-engineering/chatbot-with-local-llm-using-langchain
 
 
+## Important Link
+### Train any LLM model using usint peft
+https://huggingface.co/blog/peft
+### Fine-tuning LLM with QLoRA on Single GPU: Training Falcon-7b on ChatBot Support FAQ Dataset
+https://www.youtube.com/watch?v=DcBC4yGHV4Q
+### Fine-tuning Alpaca: Train Alpaca LoRa for Sentiment Analysis on a Custom Dataset
+https://www.youtube.com/watch?v=4-Q50fmq7Uw&t=2005s
+### LangChain - Using Hugging Face Models locally (code walkthrough)
+https://www.youtube.com/watch?v=Kn7SX2Mx_Jk
 
+### Meta transformer
+https://github.com/facebookresearch/ImageBind
+
+### transformers meets bitsandbytes for democratzing Large Language Models (LLMs) through 4bit quantization
+https://colab.research.google.com/drive/1VoYNfYDKcKRQRor98Zbf2-9VQTtGJ24k?usp=sharing#scrollTo=XIyP_0r6zuVc
+
+### These LLMs (Large Language Models) are all licensed for commercial use
+https://github.com/eugeneyan/open-llms
 
 
 
