@@ -213,8 +213,16 @@ def llm_return():
 
 ```
 Resources: https://www.mlexpert.io/prompt-engineering/chatbot-with-local-llm-using-langchain
-
-
+### Add GPT4all for pdf chat
+```
+llm = GPT4All(
+    model=r"/home/drmohammad/Documents/LLM/ggml-gpt4all-j-v1.3-groovy.bin",
+    n_ctx=1000,
+    backend="gptj",
+    verbose=False
+)
+```
+https://www.mlexpert.io/prompt-engineering/private-gpt4all
 ## Important Link
 ### Train any LLM model using usint peft
 https://huggingface.co/blog/peft
