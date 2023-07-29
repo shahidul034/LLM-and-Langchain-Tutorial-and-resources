@@ -70,7 +70,7 @@ question = "What is the capital of England?"
 
 print(llm_chain.run(question))
 ```
-## Run the LLM with HuggingFacePipeline/
+## Run the LLM with HuggingFacePipeline
 
 ```
 from langchain.llms import HuggingFacePipeline
@@ -92,6 +92,7 @@ local_llm = HuggingFacePipeline(pipeline=pipe)
 print(local_llm('What is the capital of France? '))
 ```
 ## Load and use custom embedding model 
+https://huggingface.co/blog/getting-started-with-embeddings
 ```
 from langchain.embeddings import HuggingFaceEmbeddings
 model_name = "sentence-transformers/all-mpnet-base-v2"
@@ -241,12 +242,3 @@ https://colab.research.google.com/drive/1VoYNfYDKcKRQRor98Zbf2-9VQTtGJ24k?usp=sh
 
 ### These LLMs (Large Language Models) are all licensed for commercial use
 https://github.com/eugeneyan/open-llms
-
-
-
-
-
-
-
-
-    
