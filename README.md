@@ -224,6 +224,9 @@ llm = GPT4All(
 )
 ```
 https://www.mlexpert.io/prompt-engineering/private-gpt4all
+
+## Build Streamlit HealthCare Chatbot with Llama 2&Langchain on CPU Machine with MEMORY|All OPEN SOURCE
+https://www.youtube.com/watch?v=XNmFIkViEBU
 ## Important Link
 ### Train any LLM model using usint peft
 https://huggingface.co/blog/peft
