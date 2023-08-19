@@ -246,3 +246,4 @@ https://colab.research.google.com/drive/1VoYNfYDKcKRQRor98Zbf2-9VQTtGJ24k?usp=sh
 
 ### These LLMs (Large Language Models) are all licensed for commercial use
 https://github.com/eugeneyan/open-llms
+https://www.youtube.com/@samwitteveenai
