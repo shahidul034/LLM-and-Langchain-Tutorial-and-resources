@@ -233,11 +233,15 @@ https://www.youtube.com/watch?v=DcBC4yGHV4Q
 https://www.youtube.com/watch?v=4-Q50fmq7Uw&t=2005s
 ### LangChain - Using Hugging Face Models locally (code walkthrough)
 https://www.youtube.com/watch?v=Kn7SX2Mx_Jk
-
+### How to Create Custom Datasets To Train Llama-2
+https://www.youtube.com/watch?v=z2QE12p3kMM&t
 ### Meta transformer
 https://github.com/facebookresearch/ImageBind
 
 ### transformers meets bitsandbytes for democratzing Large Language Models (LLMs) through 4bit quantization
+## https://www.youtube.com/@engineerprompt
+## 
+
 https://colab.research.google.com/drive/1VoYNfYDKcKRQRor98Zbf2-9VQTtGJ24k?usp=sharing#scrollTo=XIyP_0r6zuVc
 
 ### These LLMs (Large Language Models) are all licensed for commercial use
