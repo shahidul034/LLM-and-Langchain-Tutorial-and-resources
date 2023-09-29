@@ -1,8 +1,7 @@
 
 # LLM training and Langchain tutorial
 
-A brief description of what this project does and who it's for LLM training ,testing and integrate with Langchain.
-
+A brief description and important resources of LLM training, testing, and integration with Langchain
 
 ## Installation
 
