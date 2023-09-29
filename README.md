@@ -17,6 +17,13 @@ pip install langchain
 pip install streamlit
 pip install streamlit-chat
 ```
+Try rebuilding from source:
+```
+pip install -q -U bitsandbytes
+pip install -q -U git+https://github.com/huggingface/transformers.git
+pip install -q -U git+https://github.com/huggingface/peft.git
+pip install -q -U git+https://github.com/huggingface/accelerate.git
+```
 ## Load any model locally
 ```
 path=r'/home/drmohammad/Documents/LLM/Llamav2hf/Llama-2-7b-chat-hf'
