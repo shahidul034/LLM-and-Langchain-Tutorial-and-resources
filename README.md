@@ -7,22 +7,9 @@ A brief description and important resources of LLM training, testing, and integr
 conda create -n med python=3.10
 conda activate med
 conda install -c conda-forge cudatoolkit=11.8.0
-pip install nvidia-cudnn-cu11==8.6.0.163
-pip3 install --pre torch torchvision torchaudio --index-url https://download.pytorch.org/whl/nightly/cu121
-python -m pip install jupyter
-pip install langchain
-pip install -q -U bitsandbytes
-pip install transformers==4.38.2
-pip install -q -U git+https://github.com/huggingface/peft.git
-pip install -q -U git+https://github.com/huggingface/accelerate.git
-pip install fastapi
-pip install uvicorn
-pip install datasets
-pip install trl
-pip install pynvml
-pip install packaging ninja
-pip install flash-attn --no-build-isolation
-pip install langchainhub sentence-transformers faiss-gpu
+pip install torch torchvision torchaudio jupyter langchainhub sentence-transformers faiss-gpu docx2txt langchain bitsandbytes transformers peft accelerate pynvml trl datasets uvicorn fastapi packaging ninja wandb
+pip install -U flash-attn --no-build-isolation
+
 ```
 ## Installation
 
