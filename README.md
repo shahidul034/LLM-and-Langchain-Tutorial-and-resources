@@ -11,6 +11,17 @@ pip install torch torchvision torchaudio jupyter langchainhub sentence-transform
 pip install -U flash-attn --no-build-isolation
 
 ```
+## unsloth installation
+```
+conda create --name unsloth_env python=3.10
+conda activate unsloth_env
+conda install -c conda-forge cudatoolkit=11.8.0
+pip install torch torchvision torchaudio jupyter langchainhub sentence-transformers faiss-gpu docx2txt langchain bitsandbytes transformers peft accelerate pynvml trl datasets uvicorn fastapi packaging ninja wandb
+
+
+pip install git+https://github.com/unslothai/unsloth.git
+pip install --no-deps packaging ninja einops flash-attn xformers trl peft accelerate bitsandbytes
+```
 ## Installation
 
 ```
