@@ -2,6 +2,12 @@
 # LLM training and Langchain tutorial
 
 A brief description and important resources of LLM training, testing, and integration with Langchain
+### pip cache and hugging face cache folder change
+```
+export PIP_CACHE_DIR="/mnt/FA00A16100A1259B/shakib/pip_cache"
+export HF_DATASETS_CACHE="/mnt/FA00A16100A1259B/shakib/model_cache"
+```
+
 ## Full installation
 ```
 conda create -n med python=3.10
