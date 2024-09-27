@@ -7,7 +7,8 @@ A brief description and important resources of LLM training, testing, and integr
 export PIP_CACHE_DIR="/mnt/FA00A16100A1259B/shakib/pip_cache"
 export HF_DATASETS_CACHE="/mnt/FA00A16100A1259B/shakib/model_cache"
 ```
-
+### After installing conda in ubuntu. Type this command to init conda
+`source ~/.bashrc`
 ## Full installation
 ```
 conda create -n med python=3.10
